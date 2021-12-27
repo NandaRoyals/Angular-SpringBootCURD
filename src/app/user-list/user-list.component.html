@@ -1,0 +1,32 @@
+<h2>User List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Sur Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Date Of Birth</th>
+            <th>Date of Joining</th>
+            <th>Pincode</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tr *ngFor = "let userEntity of User">
+        <td>{{userEntity.userName}}</td>
+        <td>{{userEntity.surName}}</td>
+        <td>{{userEntity.gender}}</td>
+        <td>{{userEntity.address}}</td>
+        <td>{{userEntity.dateofBirth}}</td>
+        <td>{{userEntity.dateOfJoining}}</td>
+        <td>{{userEntity.pincode}}</td>
+        <td>
+            <button (click) = "updateUser(userEntity.userId)" class="btn btn-info">Update</button>
+            <button (click) = "deleteUser(userEntity.userId)" class="btn btn-danger" style="margin-left: auto">Delete</button>
+           
+            
+        </td>
+
+    </tr>
+
+</table>
